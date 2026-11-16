@@ -1,0 +1,21 @@
+/*
+ * wifi_config.h - network settings for the device firmware.
+ *
+ * Copy this file to wifi_config.h (same folder) and fill in your values.
+ * wifi_config.h is listed in .gitignore so the password is never committed.
+ */
+#ifndef WIFI_CONFIG_H
+#define WIFI_CONFIG_H
+
+/* Wi-Fi network (2.4 GHz, WPA2-Personal; the RW007 does not support 5 GHz). */
+#define WIFI_SSID        "your-ssid"
+#define WIFI_PASSWORD    "your-password"
+
+/* MQTT broker: the IPv4 address of the PC running Mosquitto on the same network. */
+#define MQTT_BROKER_IP   "192.168.0.10"
+#define MQTT_BROKER_PORT 1883
+
+/* Device name: used as the MQTT client ID and in the topic bca182/activity/<name>/sensor. */
+#define DEVICE_NAME      "rt-spark-01"
+
+#endif /* WIFI_CONFIG_H */

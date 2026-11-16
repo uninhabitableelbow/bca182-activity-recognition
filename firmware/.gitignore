@@ -1,0 +1,6 @@
+.pio/
+# Local Wi-Fi credentials and broker address (template: App/Inc/wifi_config.h.example)
+App/Inc/wifi_config.h
+# CubeMX scratch output
+MXTmpFiles/
+*_save
