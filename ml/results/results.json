@@ -1,0 +1,422 @@
+{
+  "dataset": {
+    "rows": 88588,
+    "segments": 952,
+    "days": 12,
+    "sample_rate_hz": 5
+  },
+  "stage1_architectures": [
+    {
+      "architecture": "logistic",
+      "window": 10,
+      "parameters": 14,
+      "accuracy": 0.7821,
+      "balanced_accuracy": 0.7817,
+      "f1_run": 0.7683,
+      "confusion": {
+        "tn": 33694,
+        "fp": 6650,
+        "fn": 10797,
+        "tp": 28922
+      },
+      "rotated": {
+        "accuracy": 0.4839,
+        "balanced_accuracy": 0.486,
+        "f1_run": 0.5895,
+        "confusion": {
+          "tn": 9082,
+          "fp": 31262,
+          "fn": 10056,
+          "tp": 29663
+        }
+      }
+    },
+    {
+      "architecture": "cnn",
+      "window": 10,
+      "parameters": 370,
+      "accuracy": 0.9995,
+      "balanced_accuracy": 0.9995,
+      "f1_run": 0.9994,
+      "confusion": {
+        "tn": 40324,
+        "fp": 20,
+        "fn": 24,
+        "tp": 39695
+      },
+      "rotated": {
+        "accuracy": 0.5761,
+        "balanced_accuracy": 0.5784,
+        "f1_run": 0.6711,
+        "confusion": {
+          "tn": 11492,
+          "fp": 28852,
+          "fn": 5088,
+          "tp": 34631
+        }
+      }
+    },
+    {
+      "architecture": "gru",
+      "window": 10,
+      "parameters": 402,
+      "accuracy": 0.9993,
+      "balanced_accuracy": 0.9993,
+      "f1_run": 0.9993,
+      "confusion": {
+        "tn": 40305,
+        "fp": 39,
+        "fn": 20,
+        "tp": 39699
+      },
+      "rotated": {
+        "accuracy": 0.5836,
+        "balanced_accuracy": 0.5859,
+        "f1_run": 0.6786,
+        "confusion": {
+          "tn": 11523,
+          "fp": 28821,
+          "fn": 4518,
+          "tp": 35201
+        }
+      }
+    }
+  ],
+  "stage2_windows": [
+    {
+      "architecture": "cnn",
+      "window": 5,
+      "window_seconds": 1.0,
+      "accuracy": 0.9993,
+      "balanced_accuracy": 0.9993,
+      "f1_run": 0.9993,
+      "confusion": {
+        "tn": 42470,
+        "fp": 29,
+        "fn": 31,
+        "tp": 42263
+      },
+      "rotated": {
+        "accuracy": 0.5897,
+        "balanced_accuracy": 0.5904,
+        "f1_run": 0.6856,
+        "confusion": {
+          "tn": 12069,
+          "fp": 30430,
+          "fn": 4363,
+          "tp": 37931
+        }
+      }
+    },
+    {
+      "architecture": "cnn",
+      "window": 10,
+      "window_seconds": 2.0,
+      "accuracy": 0.9995,
+      "balanced_accuracy": 0.9995,
+      "f1_run": 0.9994,
+      "confusion": {
+        "tn": 40324,
+        "fp": 20,
+        "fn": 24,
+        "tp": 39695
+      },
+      "rotated": {
+        "accuracy": 0.5761,
+        "balanced_accuracy": 0.5784,
+        "f1_run": 0.6711,
+        "confusion": {
+          "tn": 11492,
+          "fp": 28852,
+          "fn": 5088,
+          "tp": 34631
+        }
+      }
+    },
+    {
+      "architecture": "cnn",
+      "window": 20,
+      "window_seconds": 4.0,
+      "accuracy": 0.9998,
+      "balanced_accuracy": 0.9998,
+      "f1_run": 0.9998,
+      "confusion": {
+        "tn": 36031,
+        "fp": 3,
+        "fn": 10,
+        "tp": 34559
+      },
+      "rotated": {
+        "accuracy": 0.5615,
+        "balanced_accuracy": 0.5664,
+        "f1_run": 0.6423,
+        "confusion": {
+          "tn": 11841,
+          "fp": 24193,
+          "fn": 6769,
+          "tp": 27800
+        }
+      }
+    }
+  ],
+  "stage3_robustness": [
+    {
+      "architecture": "cnn",
+      "window": 5,
+      "hidden": 8,
+      "parameters": 370,
+      "augmented": true,
+      "accuracy": 0.9861,
+      "balanced_accuracy": 0.9861,
+      "f1_run": 0.9861,
+      "confusion": {
+        "tn": 41835,
+        "fp": 664,
+        "fn": 513,
+        "tp": 41781
+      },
+      "rotated": {
+        "accuracy": 0.9871,
+        "balanced_accuracy": 0.9871,
+        "f1_run": 0.9871,
+        "confusion": {
+          "tn": 41949,
+          "fp": 550,
+          "fn": 541,
+          "tp": 41753
+        }
+      }
+    },
+    {
+      "architecture": "cnn",
+      "window": 5,
+      "hidden": 16,
+      "parameters": 1122,
+      "augmented": true,
+      "accuracy": 0.9951,
+      "balanced_accuracy": 0.9951,
+      "f1_run": 0.9951,
+      "confusion": {
+        "tn": 42377,
+        "fp": 122,
+        "fn": 295,
+        "tp": 41999
+      },
+      "rotated": {
+        "accuracy": 0.9947,
+        "balanced_accuracy": 0.9947,
+        "f1_run": 0.9947,
+        "confusion": {
+          "tn": 42318,
+          "fp": 181,
+          "fn": 265,
+          "tp": 42029
+        }
+      }
+    },
+    {
+      "architecture": "cnn",
+      "window": 10,
+      "hidden": 8,
+      "parameters": 370,
+      "augmented": true,
+      "accuracy": 0.9949,
+      "balanced_accuracy": 0.9949,
+      "f1_run": 0.9948,
+      "confusion": {
+        "tn": 40066,
+        "fp": 278,
+        "fn": 132,
+        "tp": 39587
+      },
+      "rotated": {
+        "accuracy": 0.9965,
+        "balanced_accuracy": 0.9965,
+        "f1_run": 0.9965,
+        "confusion": {
+          "tn": 40213,
+          "fp": 131,
+          "fn": 149,
+          "tp": 39570
+        }
+      }
+    },
+    {
+      "architecture": "cnn",
+      "window": 10,
+      "hidden": 16,
+      "parameters": 1122,
+      "augmented": true,
+      "accuracy": 0.9961,
+      "balanced_accuracy": 0.9962,
+      "f1_run": 0.9961,
+      "confusion": {
+        "tn": 40129,
+        "fp": 215,
+        "fn": 94,
+        "tp": 39625
+      },
+      "rotated": {
+        "accuracy": 0.9966,
+        "balanced_accuracy": 0.9966,
+        "f1_run": 0.9966,
+        "confusion": {
+          "tn": 40170,
+          "fp": 174,
+          "fn": 98,
+          "tp": 39621
+        }
+      }
+    },
+    {
+      "architecture": "cnn",
+      "window": 20,
+      "hidden": 8,
+      "parameters": 370,
+      "augmented": true,
+      "accuracy": 0.9977,
+      "balanced_accuracy": 0.9977,
+      "f1_run": 0.9976,
+      "confusion": {
+        "tn": 35939,
+        "fp": 95,
+        "fn": 69,
+        "tp": 34500
+      },
+      "rotated": {
+        "accuracy": 0.9981,
+        "balanced_accuracy": 0.9981,
+        "f1_run": 0.9981,
+        "confusion": {
+          "tn": 35966,
+          "fp": 68,
+          "fn": 64,
+          "tp": 34505
+        }
+      }
+    },
+    {
+      "architecture": "cnn",
+      "window": 20,
+      "hidden": 16,
+      "parameters": 1122,
+      "augmented": true,
+      "accuracy": 0.9993,
+      "balanced_accuracy": 0.9993,
+      "f1_run": 0.9993,
+      "confusion": {
+        "tn": 36005,
+        "fp": 29,
+        "fn": 22,
+        "tp": 34547
+      },
+      "rotated": {
+        "accuracy": 0.9987,
+        "balanced_accuracy": 0.9987,
+        "f1_run": 0.9986,
+        "confusion": {
+          "tn": 35972,
+          "fp": 62,
+          "fn": 33,
+          "tp": 34536
+        }
+      }
+    }
+  ],
+  "cross_wrist": {
+    "plain": {
+      "train_wrist0_test_wrist1": {
+        "accuracy": 0.9802,
+        "balanced_accuracy": 0.9779,
+        "f1_run": 0.9772,
+        "confusion": {
+          "tn": 23517,
+          "fp": 50,
+          "fn": 790,
+          "tp": 18004
+        }
+      },
+      "train_wrist1_test_wrist0": {
+        "accuracy": 0.7471,
+        "balanced_accuracy": 0.7721,
+        "f1_run": 0.7049,
+        "confusion": {
+          "tn": 16777,
+          "fp": 0,
+          "fn": 9536,
+          "tp": 11389
+        }
+      }
+    },
+    "augmented": {
+      "train_wrist0_test_wrist1": {
+        "accuracy": 0.9904,
+        "balanced_accuracy": 0.9911,
+        "f1_run": 0.9893,
+        "confusion": {
+          "tn": 23217,
+          "fp": 350,
+          "fn": 55,
+          "tp": 18739
+        }
+      },
+      "train_wrist1_test_wrist0": {
+        "accuracy": 0.9877,
+        "balanced_accuracy": 0.9888,
+        "f1_run": 0.9888,
+        "confusion": {
+          "tn": 16756,
+          "fp": 21,
+          "fn": 442,
+          "tp": 20483
+        }
+      }
+    }
+  },
+  "final_model": {
+    "architecture": "cnn",
+    "window": 10,
+    "kwargs": {
+      "hidden": 8
+    },
+    "rotation_augmentation": true,
+    "parameters": 370,
+    "mean": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "std": [
+      0.7735235691070557,
+      0.7735235691070557,
+      0.7735235691070557,
+      1.4913907051086426,
+      1.4913907051086426,
+      1.4913907051086426
+    ],
+    "channels": [
+      "acceleration_x",
+      "acceleration_y",
+      "acceleration_z",
+      "gyro_x",
+      "gyro_y",
+      "gyro_z"
+    ],
+    "units": {
+      "acceleration": "g",
+      "gyro": "rad/s"
+    },
+    "sample_rate_hz": 5,
+    "labels": {
+      "0": "walk",
+      "1": "run"
+    },
+    "train_accuracy": 0.9979,
+    "heldout_day_accuracy": 0.9949,
+    "heldout_day_rotated_accuracy": 0.9965
+  },
+  "training_seconds": 1548.3
+}
