@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+# Runtime database (created by the services)
+cloud/data/
+# Kaggle dataset: download it yourself (see README), it is not redistributed here
+*.csv
+archive.zip
+# PlatformIO / editor
+.pio/
+.vscode/
