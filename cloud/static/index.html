@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activity Recognition</title>
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --ink:#1d2330; --muted:#6b7280; --walk:#2f80ed; --run:#eb5757; --line:#e5e7eb; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#12151b; --card:#1b2029; --ink:#e8eaef; --muted:#9aa3b2; --line:#2a303b; } }
+  * { box-sizing:border-box; }
+  body { margin:0; font:15px/1.4 system-ui, sans-serif; background:var(--bg); color:var(--ink); }
+  main { max-width:760px; margin:0 auto; padding:16px; }
+  h1 { font-size:20px; margin:8px 0 16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; margin-bottom:16px; }
+  .now { display:flex; align-items:center; gap:16px; }
+  .badge { font-size:34px; font-weight:700; text-transform:uppercase; }
+  .walk { color:var(--walk); } .run { color:var(--run); }
+  .muted { color:var(--muted); font-size:13px; }
+  .bar { height:10px; border-radius:5px; background:var(--line); overflow:hidden; display:flex; margin:8px 0; }
+  .bar span { display:block; height:100%; }
+  table { width:100%; border-collapse:collapse; }
+  td, th { text-align:left; padding:6px 4px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums; }
+  th { color:var(--muted); font-weight:500; font-size:13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Activity Recognition</h1>
+  <div class="card">
+    <div class="muted">Current activity (<span id="device">no device</span>)</div>
+    <div class="now"><div id="activity" class="badge">—</div><div id="conf" class="muted"></div></div>
+    <div id="status" class="muted">Waiting for data…</div>
+  </div>
+  <div class="card">
+    <div class="muted">Last 60 minutes</div>
+    <div class="bar"><span id="barWalk" style="background:var(--walk);width:0"></span><span id="barRun" style="background:var(--run);width:0"></span></div>
+    <div class="muted"><span class="walk">■</span> Walk <span id="walkS">0</span> s &nbsp; <span class="run">■</span> Run <span id="runS">0</span> s</div>
+  </div>
+  <div class="card">
+    <div class="muted">History (newest first)</div>
+    <table><thead><tr><th>Time</th><th>Activity</th><th>Confidence</th></tr></thead><tbody id="hist"></tbody></table>
+  </div>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const fmtTime = iso => new Date(iso).toLocaleTimeString();
+async function get(path) { const r = await fetch(path); if (!r.ok) throw new Error(r.status); return r.json(); }
+async function refresh() {
+  try {
+    const l = await get('/api/latest');
+    $('device').textContent = l.device;
+    $('activity').textContent = l.activity;
+    $('activity').className = 'badge ' + l.activity;
+    $('conf').textContent = Math.round(l.confidence * 100) + '% confident';
+    $('status').textContent = l.live ? 'Live · updated ' + l.age_seconds + ' s ago' : 'Device offline · last update ' + fmtTime(l.created_at);
+    const s = await get('/api/summary?device=' + encodeURIComponent(l.device) + '&minutes=60');
+    const tot = Math.max(1, s.seconds.walk + s.seconds.run);
+    $('barWalk').style.width = (100 * s.seconds.walk / tot) + '%';
+    $('barRun').style.width = (100 * s.seconds.run / tot) + '%';
+    $('walkS').textContent = s.seconds.walk; $('runS').textContent = s.seconds.run;
+    const h = await get('/api/history?device=' + encodeURIComponent(l.device) + '&limit=15');
+    $('hist').replaceChildren(...h.items.map(it => {
+      const tr = document.createElement('tr');
+      for (const [txt, cls] of [[fmtTime(it.created_at), ''], [it.activity, it.activity], [Math.round(it.confidence * 100) + '%', '']]) {
+        const td = document.createElement('td'); td.textContent = txt; if (cls) td.className = cls; tr.appendChild(td);
+      }
+      return tr;
+    }));
+  } catch (e) { $('status').textContent = 'Waiting for data…'; }
+}
+refresh(); setInterval(refresh, 1000);
+</script>
+</body>
+</html>
