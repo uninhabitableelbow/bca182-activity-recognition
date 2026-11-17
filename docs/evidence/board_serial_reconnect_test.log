@@ -1,0 +1,55 @@
+[  29476] MQTT: published seq 27 to bca182/activity/rt-spark-01/sensor (277 bytes)
+[  32475] IMU seq 30: accel [-0.0232 -0.0591 1.0208] g, gyro [0.0011 0.0011 0.0000] rad/s
+[  39476] MQTT: published seq 37 to bca182/activity/rt-spark-01/sensor (278 bytes)
+[  42475] IMU seq 40: accel [-0.0251 -0.0564 1.0220] g, gyro [0.0011 0.0011 -0.0011] rad/s
+[  49476] MQTT: published seq 47 to bca182/activity/rt-spark-01/sensor (278 bytes)
+[  52475] IMU seq 50: accel [-0.0232 -0.0603 1.0208] g, gyro [0.0011 0.0000 -0.0011] rad/s
+[  59476] MQTT: published seq 57 to bca182/activity/rt-spark-01/sensor (280 bytes)
+[  62475] IMU seq 60: accel [-0.0212 -0.0559 1.0195] g, gyro [0.0032 0.0000 -0.0011] rad/s
+[  69476] MQTT: published seq 67 to bca182/activity/rt-spark-01/sensor (279 bytes)
+[  72475] IMU seq 70: accel [-0.0239 -0.0554 1.0193] g, gyro [0.0011 0.0011 -0.0021] rad/s
+[  79476] MQTT: published seq 77 to bca182/activity/rt-spark-01/sensor (279 bytes)
+[  82475] IMU seq 80: accel [-0.3064 -0.5439 0.4670] g, gyro [-1.0068 -0.3384 0.2618] rad/s
+[  89476] MQTT: published seq 87 to bca182/activity/rt-spark-01/sensor (279 bytes)
+[  92475] IMU seq 90: accel [-0.0256 -0.0654 1.0215] g, gyro [-0.0011 0.0011 0.0000] rad/s
+[  99476] MQTT: published seq 97 to bca182/activity/rt-spark-01/sensor (279 bytes)
+[ 102475] IMU seq 100: accel [-0.0234 -0.0615 1.0188] g, gyro [0.0011 0.0000 0.0000] rad/s
+[ 109476] MQTT: published seq 107 to bca182/activity/rt-spark-01/sensor (281 bytes)
+[ 112475] IMU seq 110: accel [-0.0227 -0.0664 1.0220] g, gyro [0.0032 0.0000 -0.0011] rad/s
+[ 119476] MQTT: published seq 117 to bca182/activity/rt-spark-01/sensor (280 bytes)
+[ 121016] MQTT: process loop failed (MQTTKeepAliveTimeout)
+[ 121021] Connection lost, reconnecting...
+[ 122090] MQTT: connected to broker 10.59.240.216:1883 as rt-spark-01
+[ 122475] IMU seq 120: accel [-0.0215 -0.0659 1.0212] g, gyro [-0.0011 0.0011 -0.0011] rad/s
+[ 122477] MQTT: published seq 120 to bca182/activity/rt-spark-01/sensor (281 bytes)
+[ 132475] IMU seq 130: accel [-0.0237 -0.0657 1.0203] g, gyro [0.0011 0.0000 -0.0011] rad/s
+[ 132477] MQTT: published seq 130 to bca182/activity/rt-spark-01/sensor (280 bytes)
+[ 142475] IMU seq 140: accel [-0.0244 -0.0603 1.0193] g, gyro [-0.0032 0.0021 -0.0021] rad/s
+[ 142476] MQTT: published seq 140 to bca182/activity/rt-spark-01/sensor (281 bytes)
+[ 149016] MQTT: process loop failed (MQTTKeepAliveTimeout)
+[ 149021] Connection lost, reconnecting...
+[ 150096] MQTT: connected to broker 10.59.240.216:1883 as rt-spark-01
+[ 150476] MQTT: published seq 148 to bca182/activity/rt-spark-01/sensor (278 bytes)
+[ 152475] IMU seq 150: accel [-0.0244 -0.0652 1.0205] g, gyro [0.0011 0.0011 0.0000] rad/s
+[ 160476] MQTT: published seq 158 to bca182/activity/rt-spark-01/sensor (285 bytes)
+[ 162475] IMU seq 160: accel [0.0371 -0.1370 1.0122] g, gyro [0.1011 -0.0788 -0.0670] rad/s
+[ 170476] MQTT: published seq 168 to bca182/activity/rt-spark-01/sensor (279 bytes)
+[ 172475] IMU seq 170: accel [-0.0234 -0.0652 1.0210] g, gyro [0.0011 0.0000 -0.0011] rad/s
+[ 180476] MQTT: published seq 178 to bca182/activity/rt-spark-01/sensor (279 bytes)
+[ 182475] IMU seq 180: accel [-0.0237 -0.0642 1.0186] g, gyro [0.0000 0.0011 0.0000] rad/s
+[ 190476] MQTT: published seq 188 to bca182/activity/rt-spark-01/sensor (280 bytes)
+[ 192475] IMU seq 190: accel [-0.0244 -0.0586 1.0159] g, gyro [0.0053 -0.0011 -0.0011] rad/s
+[ 200476] MQTT: published seq 198 to bca182/activity/rt-spark-01/sensor (278 bytes)
+[ 202475] IMU seq 200: accel [-0.0256 -0.0625 1.0151] g, gyro [0.0160 0.0000 -0.0011] rad/s
+[ 210476] MQTT: published seq 208 to bca182/activity/rt-spark-01/sensor (281 bytes)
+[ 212475] IMU seq 210: accel [-0.0225 -0.0659 1.0208] g, gyro [0.0000 0.0000 0.0000] rad/s
+[ 220476] MQTT: published seq 218 to bca182/activity/rt-spark-01/sensor (280 bytes)
+[ 222475] IMU seq 220: accel [-0.0232 -0.0652 1.0212] g, gyro [0.0000 0.0011 0.0000] rad/s
+[ 230476] MQTT: published seq 228 to bca182/activity/rt-spark-01/sensor (281 bytes)
+[ 232475] IMU seq 230: accel [-0.0234 -0.0635 1.0217] g, gyro [0.0000 0.0011 -0.0011] rad/s
+[ 240476] MQTT: published seq 238 to bca182/activity/rt-spark-01/sensor (280 bytes)
+[ 242475] IMU seq 240: accel [-0.0234 -0.0630 1.0220] g, gyro [0.0032 0.0011 -0.0011] rad/s
+[ 250476] MQTT: published seq 248 to bca182/activity/rt-spark-01/sensor (281 bytes)
+[ 252475] IMU seq 250: accel [-0.0242 -0.0674 1.0205] g, gyro [0.0064 -0.0011 -0.0021] rad/s
+[ 260476] MQTT: published seq 258 to bca182/activity/rt-spark-01/sensor (281 bytes)
+[ 262475] IMU seq 260: accel [-0.0227 -0.0669 1.0229] g, gyro [0.0021 0.0000 -0.0011] rad/s
