@@ -31,7 +31,7 @@ result during the test.
 | FT-09 | Unit tests | `pio test -e native` | All pass | Pass: 13 tests | test output |
 | FT-10 | Initialise sensors | Reset the board flat on the desk | ICM20608 found; about 1 g on Z and 0 rad/s at rest | Pass: WHO_AM_I 0xAF, accel [-0.02, -0.07, 1.02] g, gyro below 0.003 rad/s | [first publish log](evidence/board_serial_first_publish.log) |
 | FT-11 | Initialise Wi-Fi | Same reset | RW007 starts and reports its firmware and MAC | Pass: RW007_2.1.0, MAC FC:58:4A:A6:E5:68 | same |
-| FT-12 | Join Wi-Fi | `Driver_WiFi0.Activate` with the hotspot's name and password | IP address from DHCP | Pass: 10.59.240.145, 6.1 s after start-up | same |
+| FT-12 | Join Wi-Fi | `Driver_WiFi0.Activate` with the hotspot's name and password | IP address from DHCP | Pass: 10.59.240.145, 6.1 s after the join started (8.6 s after power-up) | same |
 | FT-13 | Connect to the MQTT broker | coreMQTT CONNECT to the PC | Connected | Pass: 0.1 s after the IP address | same |
 | FT-14 | One message per second | Watch the log and the classifier for 4 minutes | One message per second, sequence numbers without gaps | Pass: about 280-byte messages, a prediction every second | same; classifier log |
 | FT-15 | Hotspot not visible | Hotspot on 5 GHz / off | Join fails, board keeps retrying and lists the networks it can see | Pass: 8 networks listed, retry every 3 s | serial log |
