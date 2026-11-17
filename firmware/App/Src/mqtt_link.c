@@ -75,6 +75,11 @@ int mqtt_link_connect(const char *host, uint16_t port, const char *client_id)
   }
   uint32_t rcv_timeout_ms = 20;     /* short, so polling for packets never blocks long */
   Driver_WiFi0.SocketSetOpt(net.socket, ARM_SOCKET_SO_RCVTIMEO, &rcv_timeout_ms, sizeof rcv_timeout_ms);
+  /* Without a send timeout, a connection that died silently (e.g. the PC dropped it)
+   * blocks the task forever once the TCP send buffer is full. With it, coreMQTT gets
+   * "try again" and gives up after MQTT_SEND_TIMEOUT_MS, so we reconnect. */
+  uint32_t snd_timeout_ms = 2000;
+  Driver_WiFi0.SocketSetOpt(net.socket, ARM_SOCKET_SO_SNDTIMEO, &snd_timeout_ms, sizeof snd_timeout_ms);
   uint32_t keepalive = 1;
   Driver_WiFi0.SocketSetOpt(net.socket, ARM_SOCKET_SO_KEEPALIVE, &keepalive, sizeof keepalive);
 
