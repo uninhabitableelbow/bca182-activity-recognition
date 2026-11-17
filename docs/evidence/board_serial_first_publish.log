@@ -1,0 +1,23 @@
+[   8562] Wi-Fi connected to "weh": IP 10.59.240.145, gateway 10.59.240.172
+[   8650] MQTT: connected to broker 10.59.240.216:1883 as rt-spark-01
+[      0] BCA182 Lab 3 - Activity Recognition device (RT-Spark, FreeRTOS)
+[    163] ICM20608 ready, WHO_AM_I = 0xAF
+[    166] Calibrating gyroscope: keep the board still for 1 s
+[   2441] RW007 firmware version: RW007_2.1.0-a7a0d089-57
+[   2446] RW007 serial number:    rw007c745bb22fc584aa6e568
+[   2452] RW007 MAC address:      FC:58:4A:A6:E5:68
+[   2458] Wi-Fi module: RW007 RW007_2.1.0-a7a0d089-57
+[   2462] Connecting to Wi-Fi "weh"...
+[   2475] IMU seq 0: accel [-0.0232 -0.0657 1.0239] g, gyro [-0.0021 -0.0011 -0.0011] rad/s
+[   8558] Wi-Fi connected to "weh": IP 10.59.240.145, gateway 10.59.240.172
+[   8636] MQTT: connected to broker 10.59.240.216:1883 as rt-spark-01
+[   9476] MQTT: published seq 7 to bca182/activity/rt-spark-01/sensor (284 bytes)
+[  12475] IMU seq 10: accel [-0.0225 -0.0652 1.0244] g, gyro [0.0000 -0.0011 0.0000] rad/s
+[  19476] MQTT: published seq 17 to bca182/activity/rt-spark-01/sensor (285 bytes)
+[  22475] IMU seq 20: accel [-0.0222 -0.0662 1.0215] g, gyro [-0.0011 -0.0011 -0.0011] rad/s
+[  29476] MQTT: published seq 27 to bca182/activity/rt-spark-01/sensor (283 bytes)
+[  32475] IMU seq 30: accel [-0.0229 -0.0645 1.0203] g, gyro [0.0000 0.0000 0.0000] rad/s
+[  39476] MQTT: published seq 37 to bca182/activity/rt-spark-01/sensor (285 bytes)
+[  42475] IMU seq 40: accel [-0.0195 -0.0698 1.0232] g, gyro [-0.0021 -0.0021 -0.0021] rad/s
+[  49476] MQTT: published seq 47 to bca182/activity/rt-spark-01/sensor (286 bytes)
+[  52475] IMU seq 50: accel [-0.0212 -0.0625 1.0242] g, gyro [-0.0011 -0.0011 0.0000] rad/s
