@@ -158,6 +158,7 @@ story.append(Spacer(1, 6))
 story.append(Paragraph("Kevin Christian Villareal", centered))
 story.append(Paragraph("BCA182 Embedded Systems Programming", centered))
 story.append(Paragraph(REPORT_DATE, centered))
+story.append(Paragraph("GitHub: github.com/uninhabitableelbow/bca182-activity-recognition", centered))
 story.append(Spacer(1, 14))
 
 # ================================================================= 1
