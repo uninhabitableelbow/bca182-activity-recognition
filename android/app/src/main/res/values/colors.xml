@@ -1,0 +1,12 @@
+<resources>
+    <color name="bg">#F4F5F7</color>
+    <color name="card">#FFFFFF</color>
+    <color name="text">#1F2328</color>
+    <color name="muted">#6B7280</color>
+    <color name="walk">#2563EB</color>
+    <color name="run">#EA580C</color>
+    <color name="live">#16A34A</color>
+    <color name="stale">#9CA3AF</color>
+    <color name="error">#DC2626</color>
+    <color name="track">#E5E7EB</color>
+</resources>

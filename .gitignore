@@ -8,3 +8,5 @@ archive.zip
 # PlatformIO / editor
 .pio/
 .vscode/
+# Android build output (served to the phone from cloud/static for installing)
+*.apk
