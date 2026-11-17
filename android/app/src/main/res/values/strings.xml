@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">Activity Monitor</string>
+
+    <!-- Main screen -->
+    <string name="server_button">Server</string>
+    <string name="server_line">%1$s  ·  %2$s</string>
+    <string name="status_connecting">Connecting</string>
+    <string name="status_live">Live from %1$s</string>
+    <string name="status_stale">No new data for %1$s (device offline?)</string>
+    <string name="status_waiting">Waiting for the first prediction from %1$s</string>
+    <string name="status_unreachable">Cannot reach the server</string>
+    <string name="activity_none">--</string>
+    <string name="detail_line">Confidence %1$s  ·  %2$s  ·  seq %3$d</string>
+    <string name="last_60_minutes">Last 60 minutes</string>
+    <string name="no_data">No data yet</string>
+    <string name="summary_line">Walk %1$s (%2$d%%)  ·  Run %3$s (%4$d%%)</string>
+    <string name="history">History</string>
+
+    <!-- Durations -->
+    <string name="seconds">%1$d s</string>
+    <string name="minutes_seconds">%1$d min %2$d s</string>
+    <string name="minutes">%1$d min</string>
+    <string name="hours">%1$d h</string>
+
+    <!-- Server dialog -->
+    <string name="dialog_title">Server</string>
+    <string name="label_url">Web API address</string>
+    <string name="hint_url">http://192.168.1.10:5000</string>
+    <string name="label_device">Device name</string>
+    <string name="hint_device">rt-spark-01</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
 </resources>

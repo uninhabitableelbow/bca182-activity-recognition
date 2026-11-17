@@ -30,7 +30,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 /**
  * BCA182 Lab 3 - Android client of the activity recognition web API.
@@ -174,9 +173,9 @@ public class MainActivity extends Activity {
         }, e -> {
             latestBusy = false;
             if (e.networkResponse != null && e.networkResponse.statusCode == 404)
-                showStatus("Waiting for the first prediction from " + device, colorStale);
+                showStatus(getString(R.string.status_waiting, device), colorStale);
             else
-                showStatus("Cannot reach the server", colorError);
+                showStatus(getString(R.string.status_unreachable), colorError);
         });
     }
 
@@ -237,14 +236,14 @@ public class MainActivity extends Activity {
         boolean live = o.optBoolean("live");
         double age = o.optDouble("age_seconds", 0);
         activityText.setText(p.label());
-        detailText.setText(String.format(Locale.US, "Confidence %s  ·  %s  ·  seq %d", p.percent(), p.time, p.seq));
+        detailText.setText(getString(R.string.detail_line, p.percent(), p.time, p.seq));
         if (live) {
             setCardColor(p.isRun() ? colorRun : colorWalk);
-            statusText.setText("Live from " + device);
+            statusText.setText(getString(R.string.status_live, device));
             liveDot.setBackgroundTintList(ColorStateList.valueOf(colorLive));
         } else {
             setCardColor(colorStale);
-            statusText.setText("No new data for " + ago(age) + " (device offline?)");
+            statusText.setText(getString(R.string.status_stale, ago(age)));
             liveDot.setBackgroundTintList(ColorStateList.valueOf(0xFFFFFFFF));
         }
     }
@@ -252,8 +251,8 @@ public class MainActivity extends Activity {
     private void showStatus(String message, int color) {
         setCardColor(color);
         statusText.setText(message);
-        activityText.setText("--");
-        detailText.setText("");
+        activityText.setText(R.string.activity_none);
+        detailText.setText(null);
         liveDot.setBackgroundTintList(ColorStateList.valueOf(0xFFFFFFFF));
     }
 
@@ -266,9 +265,9 @@ public class MainActivity extends Activity {
         setWeight(summaryWalk, walk);
         setWeight(summaryRun, run);
         setWeight(summaryEmpty, total == 0 ? 1 : 0);
-        summaryText.setText(total == 0 ? "No data yet"
-                : String.format(Locale.US, "Walk %s (%d%%)  ·  Run %s (%d%%)",
-                        duration(walk), Math.round(100f * walk / total), duration(run), Math.round(100f * run / total)));
+        summaryText.setText(total == 0 ? getString(R.string.no_data)
+                : getString(R.string.summary_line, duration(walk), Math.round(100f * walk / total),
+                        duration(run), Math.round(100f * run / total)));
     }
 
     private static void setWeight(View v, float w) {
@@ -279,19 +278,20 @@ public class MainActivity extends Activity {
         }
     }
 
-    private static String duration(int seconds) {
-        return seconds >= 60 ? (seconds / 60) + " min " + (seconds % 60) + " s" : seconds + " s";
+    private String duration(int seconds) {
+        return seconds >= 60 ? getString(R.string.minutes_seconds, seconds / 60, seconds % 60)
+                : getString(R.string.seconds, seconds);
     }
 
-    private static String ago(double seconds) {
-        long s = Math.round(seconds);
-        if (s < 60) return s + " s";
-        if (s < 3600) return (s / 60) + " min";
-        return (s / 3600) + " h";
+    private String ago(double seconds) {
+        int s = (int) Math.min(Math.round(seconds), Integer.MAX_VALUE);
+        if (s < 60) return getString(R.string.seconds, s);
+        if (s < 3600) return getString(R.string.minutes, s / 60);
+        return getString(R.string.hours, s / 3600);
     }
 
     private void showServer() {
-        serverText.setText(baseUrl + "  ·  " + device);
+        serverText.setText(getString(R.string.server_line, baseUrl, device));
     }
 
     private void showSettings() {
@@ -301,9 +301,9 @@ public class MainActivity extends Activity {
         urlEdit.setText(baseUrl);
         deviceEdit.setText(device);
         new AlertDialog.Builder(this)
-                .setTitle("Server")
+                .setTitle(R.string.dialog_title)
                 .setView(v)
-                .setPositiveButton("Save", (d, w) -> {
+                .setPositiveButton(R.string.save, (d, w) -> {
                     String u = urlEdit.getText().toString().trim();
                     while (u.endsWith("/")) u = u.substring(0, u.length() - 1);
                     if (!u.isEmpty() && !u.startsWith("http")) u = "http://" + u;
@@ -314,7 +314,7 @@ public class MainActivity extends Activity {
                     showServer();
                     restart();
                 })
-                .setNegativeButton("Cancel", null)
+                .setNegativeButton(R.string.cancel, null)
                 .show();
     }
 
@@ -324,7 +324,7 @@ public class MainActivity extends Activity {
         latestBusy = historyBusy = olderBusy = summaryBusy = false;
         noMoreHistory = false;
         adapter.clear();
-        showStatus("Connecting", colorStale);
+        showStatus(getString(R.string.status_connecting), colorStale);
         showSummary(0, 0);
         fetchLatest();
         fetchNewHistory();

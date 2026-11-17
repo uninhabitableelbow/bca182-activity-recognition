@@ -5,6 +5,7 @@ import org.json.JSONObject;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 /** One row of the cloud's predictions table, as returned by /api/latest and /api/history. */
 final class Prediction {
@@ -38,7 +39,7 @@ final class Prediction {
     }
 
     String label() {
-        return activity.toUpperCase();
+        return activity.toUpperCase(Locale.ROOT);
     }
 
     String percent() {

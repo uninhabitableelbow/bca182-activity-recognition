@@ -281,9 +281,8 @@ static int spi_wifi_transfer(const struct spi_data_packet *tx_buffer)
     cmd_seq = 1;
   stats.transfers++;
 
-  int result = TRANSFER_DATA_ERROR;
   for (int retry = 3; retry > 0; retry--) {
-    result = wifi_data_transfer(cmd_seq, rx_buffer, tx_buffer);
+    int result = wifi_data_transfer(cmd_seq, rx_buffer, tx_buffer);
     if (result != TRANSFER_DATA_ERROR)
       return result;
     stats.retries++;

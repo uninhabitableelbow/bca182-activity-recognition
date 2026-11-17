@@ -39,7 +39,7 @@
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Server"
+            android:text="@string/server_button"
             android:textColor="@color/walk" />
     </LinearLayout>
 
@@ -71,7 +71,7 @@
                 android:id="@+id/status_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Connecting"
+                android:text="@string/status_connecting"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="--"
+            android:text="@string/activity_none"
             android:textColor="#FFFFFF"
             android:textSize="56sp"
             android:textStyle="bold" />
@@ -106,7 +106,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Last 60 minutes"
+            android:text="@string/last_60_minutes"
             android:textColor="@color/text"
             android:textSize="15sp"
             android:textStyle="bold" />
@@ -144,7 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="No data yet"
+            android:text="@string/no_data"
             android:textColor="@color/muted"
             android:textSize="13sp" />
     </LinearLayout>
@@ -155,7 +155,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="6dp"
-        android:text="History"
+        android:text="@string/history"
         android:textColor="@color/text"
         android:textSize="17sp"
         android:textStyle="bold" />
